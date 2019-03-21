@@ -1,41 +1,4 @@
 $(function () {
-    //1.显示或隐藏二级菜单
-    $(".second").prev().on("click", function () {
-        $(this).next().slideToggle();
-    })
-
-    //2.显示或隐藏aside(侧边栏)
-    $(".topbar .left").on("click", function () {
-        $(".lt-aside,.main,.topbar").toggleClass("now");
-
-    })
-    //3.点击退出,弹出模态框
-    $(".topbar .right").on("click", function () {
-        $(".myModal").modal("show");
-    })
-    //4.点击模态框中的退出,退出后台管理系统
-    $(".logout").on("click", function () {
-        // location.href = "login.html";
-        //需要后台删除session记录
-        //需要发送ajax请求
-        $.ajax({
-            url: "/employee/employeeLogout",
-            type: "get",
-            success: function (res) {
-                console.log(res);
-
-                location.href = "login.html";
-            },
-            error: function () {
-                console.log('error');
-            }
-        })
-
-
-
-
-
-    })
 
     //插件echarts:
     //柱状图------------------------------------------------------------
@@ -125,7 +88,4 @@ $(function () {
         ]
     };
     myChart.setOption(option);
-
-
-
 })
