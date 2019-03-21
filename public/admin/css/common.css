@@ -1,0 +1,146 @@
+body{
+    background-color: #222D32;
+}
+.m-top{
+    margin-top: 150px;
+}
+html,body{
+    /* height: 1000px; */
+    height: 100%;
+}
+a,
+a:link,
+a:visited,
+a:hover,
+a:active{
+    color: white;
+    text-decoration: none;
+}
+ul,ol{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.lt-aside{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 180px;
+    height: 100%;
+    /* background-color: pink; */
+    z-index: 999;
+    transition: all 1s;
+}
+.lt-aside.now{
+    left: -180px;
+}
+.lt-aside .brand{
+    width: 100%;
+    height: 50px;
+    background-color: #367FA9;
+    text-align:center;
+    line-height: 50px;
+    font-size: 22px;
+   
+}
+.lt-aside .user{
+    height: 180px;
+    text-align: center;
+    padding-top: 30px;
+}
+.lt-aside .user img{
+    width: 80px;
+    height: 80px;
+    display: block;
+    margin: 0 auto;
+}
+.lt-aside .user p{
+    height:40px;
+    line-height:40px;
+    font-size: 18px;
+    color: #fff;
+    /* margin-bottom: 10px; */
+}
+.lt-aside .nav{
+}
+.lt-aside .nav li a{
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 40px;
+    border-left: 3px solid transparent;
+}
+.lt-aside .nav a.active{
+    border-left: 3px solid #006699;
+    background-color: #1D1F21;
+}
+.lt-aside .nav .second  a{
+    display: block;
+    padding-left: 60px;
+    height: 40px;
+    line-height: 40px;
+}
+.main{
+  padding-left: 180px;
+  height: 100%;
+  transition: all 1s;
+}
+.main.now{
+  padding-left: 0;
+}
+.main .topbar{
+    position: fixed;
+    left: 0;
+    top:0;
+    height: 50px;
+    width: 100%;
+    background-color: #3C8DBC;
+    padding-left: 180px;
+    z-index: 998;
+    transition: all 1s;
+}
+.main .topbar.now{
+    padding-left: 0;
+}
+.main .topbar a{
+  display: block;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 16px;
+}
+.main .content{
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    padding-top: 50px;
+}
+.main .content .breadcrumb{
+    margin-top: 20px;
+}
+.main .content .breadcrumb a{
+    color: #337ab7;
+}
+.main .content .canvas .left{
+    width: 500px;
+    height: 400px;
+}
+.main .content .canvas .right{
+    width: 500px;
+    height: 400px;
+}
+/* --------------------------------user.css */
+.table thead th{
+    text-align: center;
+}
+.table.table-bordered tbody td{
+    vertical-align: middle;
+}
+#paginator{
+    /* float: right; */
+    position: fixed;
+    right: 20px;
+    top: 450px;
+    z-index: 997;
+}

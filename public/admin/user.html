@@ -23,7 +23,7 @@
         </div>
         <div class="nav">
             <ul>
-                <li><a href="./user.html"><span class="glyphicon glyphicon-user"></span> 用户管理</a></li>
+                <li><a href="./user.html" class="active"><span class="glyphicon glyphicon-user"></span> 用户管理</a></li>
                 <li>
                     <a href="#"><span class="glyphicon glyphicon-list"></span> 分类管理</a>
                 </li>
@@ -49,38 +49,81 @@
                 <!-- bootstrap插件:路径导航 -->
                 <ol class="breadcrumb">
                     <li><a href="#">管理系统</a></li>
-                    <li class="active">首页</li>
+                    <li class="active">用户管理</li>
                 </ol>
-                <!-- 引入插件echarts -->
-                <div class="canvas">
-
-                    <div class="left pull-left">
-                      
- 
-
-
-
-                    </div>
-                    <div class="right pull-right"></div>
-
-                </div>
-
-
-
+                <!-- 每个页面的独立代码 -->
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th width="10%">序号</th>
+                            <th width="20%">用户名</th>
+                            <th width="30%">手机号</th>
+                            <th width="20%">状态</th>
+                            <th width="20%">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-center">
+                    </tbody>
+                </table>
 
 
-
-
+                <!-- 分页插件 -->
+                <ul id="paginator"></ul>
 
 
             </div>
         </div>
+
     </div>
 
 
 
 
 
+
+
+
+
+
+    <!-- 模板引擎 -->
+    <script type="text/html" id="tmp">
+        {{each rows v i}}
+        <tr>
+            <td>{{(page-1)*size+i+1}}</td>
+            <td>{{v.username}}</td>
+            <td>{{v.mobile}}</td>
+            <td>{{v.isDelete===1?"正常":"禁用"}}</td>
+            <td>
+                {{if v.isDelete===1}}
+                <button class="btn btn-danger" data-id="{{v.id}}">禁用</button>
+                {{else}}
+                <button class="btn btn-success" data-id="{{v.id}}">启用</button>
+                {{/if}}
+            </td>
+        </tr>
+        {{/each}}
+    </script>
+
+
+
+    <!-- 点击禁用按钮,弹出模态框 -->
+    <div class="modal fade userModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">温馨提示</h4>
+                </div>
+                <div class="modal-body">
+                    <p class="text-danger"><span class="glyphicon glyphicon-info-sign"></span> 您确定要执行此操作吗？</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary user-confirm">确定</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 
 
 
@@ -109,19 +152,11 @@
 
     <script src="./lib/jquery/jquery.min.js"></script>
     <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
     <script src="./lib/nprogress/nprogress.js"></script>
-    <script src="./lib/echarts/echarts.min.js"></script>
+    <script src="./lib/artTemplate/template-web.js"></script>
     <script src="./js/common.js"></script>
-    <script src="./js/index.js"></script>
-    <script>
-    //引入插件echarts
-    //1.引入文件
-    //2.准备div
-    //3.js代码(关键是数据)
-
-
-    </script>
-
+    <script src="./js/user.js"></script>
 </body>
 
 </html>
