@@ -1,4 +1,4 @@
-$(function () {
+// $(function () {
     //3.显示加载效果
     //引入插件NProgress
     //1.引入文件css+js
@@ -56,8 +56,26 @@ $(function () {
     })
 
 
-    //封装了分类插件
+    //封装了分页插件
+   /**
+    * 
+    * @param {*} info 分页的数据
+    * @param {*} render  点击分页的回调函数
+    */
+
+    function paginator(info,render) {
+        $("#paginator").bootstrapPaginator({
+            bootstrapMajorVersion: 3,//默认是2，如果是bootstrap3版本，这个参数必填
+            currentPage: info.page,//当前页
+            totalPages: Math.ceil(info.total / info.size),//总页数
+            size: "normal",//设置控件的大小，mini, small, normal,large
+            onPageClicked: function (event, originalEvent, type, page) {
+                //为按钮绑定点击事件 page:当前点击的按钮值
+                // console.log(page);
+                render(page);
+            }
+        })
+    }
 
 
-
-})
+// })

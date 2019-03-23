@@ -82,7 +82,7 @@ ul,ol{
 }
 .main{
   padding-left: 180px;
-  height: 100%;
+  /* height: 100%; */
   transition: all 1s;
 }
 .main.now{
@@ -138,9 +138,9 @@ ul,ol{
     vertical-align: middle;
 }
 #paginator{
-    /* float: right; */
-    position: fixed;
+    float: right;
+    /* position: fixed;
     right: 20px;
     top: 450px;
-    z-index: 997;
+    z-index: 997; */
 }

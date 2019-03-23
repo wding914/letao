@@ -27,7 +27,7 @@ $(function () {
                         // console.log(page);   
                         //点击页码,渲染当前页(发送ajax,请求数据,渲染数据)
                         page = p;
-                        render(page);
+                        render();
                     }
                 });
 
